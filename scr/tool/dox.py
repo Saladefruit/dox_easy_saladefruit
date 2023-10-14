@@ -156,6 +156,9 @@ def look_dox():
       json_file_path = os.path.join("dox", f"{name_of_dox}.json")
       if not os.path.exists(json_file_path):
           print(Fore.RED + f"Le dox '{name_of_dox}' n'existe pas.")
+          time.sleep(2)
+          clear_console()
+          main()
       else:
           with open(json_file_path, "r") as file:
               dox_data = json.load(file)
